@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChristmasCodingChallange.GamePage"
+             BackgroundImageSource="backdrop.jpg">
+    <Grid>
+        <Label 
+            FontSize="Title"
+            Margin="0,10,20,0"
+            HorizontalOptions="End"
+            Text="{Binding Score, StringFormat='Score: {0}'}"/>
+
+        <Label 
+            FontSize="Title"
+            Margin="0,50,20,0"
+            HorizontalOptions="End"
+            Text="{Binding HighScore, StringFormat='High Score: {0}'}"/>
+
+        <Image
+            x:Name="Character"
+            Source="character.png"
+            MaximumWidthRequest="75"
+            />
+
+        <Grid x:Name="ObstacleGrid"></Grid>
+        
+        <Frame x:Name="RestartButton" IsVisible="false" BackgroundColor="Orange" BorderColor="White" CornerRadius="20" VerticalOptions="Center" HorizontalOptions="Center" Padding="20">
+            <StackLayout>
+                <Label Margin="100,50,100,0" Text="Game Over!" FontSize="Large" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center" />
+                <Label Margin="100,25,100,15" Text="{Binding Score, StringFormat='Score {0}'}" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+                <Label Margin="100,0,100,50" Text="{Binding HighScore, StringFormat='High Score {0}'}" FontSize="Medium" TextColor="White" VerticalOptions="Center" HorizontalOptions="Center"/>
+            </StackLayout>
+        </Frame>
+        
+    </Grid>
+</ContentPage>
